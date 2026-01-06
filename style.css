@@ -1,0 +1,82 @@
+/* ===== 4 СЛАЙД ===== */
+
+.slide-4 {
+  position: relative;
+  min-height: 100vh;
+  background: #000;
+  overflow: hidden;
+
+  display: flex;
+  align-items: center;
+}
+
+/* ===== ФОНОВЫЕ НАУШНИКИ ===== */
+
+.slide-4__bg {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  pointer-events: none;
+}
+
+.slide-4__image {
+  width: 100%;              /* ← МЕНЬШЕ, чем было */
+  max-width: 1200px;
+  opacity: 0.75;
+
+  transform: translateY(60px) scale(1.05);
+  transition: transform 0.1s linear;
+
+  /* 🔥 Blur по краям */
+  filter: blur(6px);
+  mask-image: radial-gradient(
+    circle at center,
+    rgba(0,0,0,1) 55%,
+    rgba(0,0,0,0) 100%
+  );
+}
+
+/* ===== КОНТЕНТ ===== */
+
+.slide-4__content {
+  position: relative;
+  z-index: 2;
+
+  max-width: 1200px;
+  padding: 0 40px;
+  color: #fff;
+}
+
+.slide-4__content h2 {
+  font-size: 64px;
+  font-weight: 600;
+  margin-bottom: 20px;
+}
+
+.slide-4__content p {
+  font-size: 18px;
+  line-height: 1.6;
+  color: #b5b5b5;
+  max-width: 420px;
+}
+
+/* ===== АДАПТИВ ===== */
+
+@media (max-width: 900px) {
+  .slide-4__image {
+    width: 140%;
+  }
+
+  .slide-4__content {
+    text-align: center;
+  }
+
+  .slide-4__content p {
+    margin: 0 auto;
+  }
+}
